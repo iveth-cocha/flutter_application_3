@@ -21,12 +21,12 @@ class MyApp  extends StatelessWidget {
                 name: 'ROTONDA', 
                 location: 'Quito'
                 ),
-                ButtonSection(),
+                ImageSection(image: 'images/xd.jpeg'),
                 TitleSection(
                 name: 'CAROLINA', 
                 location: 'Quito'
                 ),
-                TextSection(description: "lorem,10"),
+                TextSection(description: "TEXTO DE PRUEBA PARA VER SI FUNCIONA"),
                 TitleSection(
                 name: 'PANECILLO', 
                 location: 'Quito' 
@@ -178,6 +178,21 @@ class TextSection extends StatelessWidget {
         description,
         softWrap: true,
       ),
+    );
+  }
+}
+class ImageSection extends StatelessWidget {
+  const ImageSection({super.key, required this.image});
+
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      image,
+      width: 600,
+      height: 240,
+      fit: BoxFit.cover,
     );
   }
 }
